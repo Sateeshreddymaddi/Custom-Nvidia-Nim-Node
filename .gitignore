@@ -12,6 +12,7 @@ logs
 .DS_Thumb
 .env.local
 .env.*.local
+.DS_Store
 
 # TypeScript build
 tsconfig.tsbuildinfo
@@ -33,5 +34,3 @@ Claude.md
 .npmignore
 .eslintignore
 
-## Testing Files
-test/
