@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Thumb
+.env.local
+.env.*.local
+
+# TypeScript build
+tsconfig.tsbuildinfo
+
+# ESLint cache
+.eslintcache
+
+# Parcel cache
+.cache
+
+# Jest
+coverage/
+
+## Claude Files
+Claude.md
+.claude
+
+## Ignore files
+.npmignore
+.eslintignore
+
+## Testing Files
+test/

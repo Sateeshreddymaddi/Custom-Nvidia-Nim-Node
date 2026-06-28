@@ -1,0 +1,110 @@
+{
+  "name": "NvidiaNim",
+  "displayName": "NVIDIA NIM",
+  "icon": "file:nvidia-nim.png",
+  "group": [
+    "transform"
+  ],
+  "version": 1,
+  "description": "Call any free model from NVIDIA NIM",
+  "defaults": {
+    "name": "NVIDIA NIM"
+  },
+  "inputs": [],
+  "inputNames": [],
+  "outputs": [
+    "ai_languageModel"
+  ],
+  "outputNames": [
+    "Model"
+  ],
+  "outputConnectionTypes": {
+    "ai_languageModel": [
+      {
+        "type": "ai_languageModel"
+      }
+    ]
+  },
+  "codex": {
+    "categories": [
+      "AI"
+    ],
+    "subcategories": {
+      "AI": [
+        "Language Models"
+      ],
+      "Language Models": [
+        "Chat Model"
+      ]
+    },
+    "resources": {}
+  },
+  "credentials": [
+    {
+      "name": "nvidiaNimApi",
+      "required": true
+    }
+  ],
+  "properties": [
+    {
+      "displayName": "Model",
+      "name": "model",
+      "type": "options",
+      "options": [
+        { "name": "MiniMax M3", "value": "minimaxai/minimax-m3" },
+        { "name": "Nemotron 3 Ultra 550B A55B", "value": "nvidia/nemotron-3-ultra-550b-a55b" },
+        { "name": "Step 3.7 Flash", "value": "stepfun-ai/step-3.7-flash" },
+        { "name": "Kimi K2.6", "value": "moonshotai/kimi-k2.6" },
+        { "name": "Mistral Medium 3.5 128B", "value": "mistralai/mistral-medium-3.5-128b" },
+        { "name": "Mistral Nemotron", "value": "mistralai/mistral-nemotron" },
+        { "name": "Sarvam M", "value": "sarvamai/sarvam-m" },
+        { "name": "Nemotron 3 Nano 30B A3B", "value": "nvidia/nemotron-3-nano-30b-a3b" },
+        { "name": "Step 3.5 Flash", "value": "stepfun-ai/step-3.5-flash" },
+        { "name": "Qwen3.5 122B A10B", "value": "qwen/qwen3.5-122b-a10b" },
+        { "name": "Nemotron 3 Super 120B A12B", "value": "nvidia/nemotron-3-super-120b-a12b" },
+        { "name": "Mistral Small 4 119B 2603", "value": "mistralai/mistral-small-4-119b-2603" },
+        { "name": "Gemma 4 31B IT", "value": "google/gemma-4-31b-it" },
+        { "name": "MiniMax M2.7", "value": "minimaxai/minimax-m2.7" },
+        { "name": "GLM 5.1", "value": "z-ai/glm-5.1" },
+        { "name": "DeepSeek V4 Pro", "value": "deepseek-ai/deepseek-v4-pro" },
+        { "name": "DeepSeek V4 Flash", "value": "deepseek-ai/deepseek-v4-flash" }
+      ],
+      "default": "minimaxai/minimax-m3",
+      "description": "The model to use for inference"
+    },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 1, "description": "Controls randomness in the output (default for MiniMax M3: 1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["minimaxai/minimax-m3"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 8192, "description": "Maximum number of tokens to generate (default for MiniMax M3: 8192)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["minimaxai/minimax-m3"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 1, "description": "Controls randomness in the output (default for Nemotron 3 Ultra 550B A55B: 1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["nvidia/nemotron-3-ultra-550b-a55b"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for Nemotron 3 Ultra 550B A55B: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["nvidia/nemotron-3-ultra-550b-a55b"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 1, "description": "Controls randomness in the output (default for Step 3.7 Flash: 1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["stepfun-ai/step-3.7-flash"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for Step 3.7 Flash: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["stepfun-ai/step-3.7-flash"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 1, "description": "Controls randomness in the output (default for Kimi K2.6: 1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["moonshotai/kimi-k2.6"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for Kimi K2.6: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["moonshotai/kimi-k2.6"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 0.7, "description": "Controls randomness in the output (default for Mistral Medium 3.5 128B: 0.7)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["mistralai/mistral-medium-3.5-128b"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for Mistral Medium 3.5 128B: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["mistralai/mistral-medium-3.5-128b"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 0.6, "description": "Controls randomness in the output (default for Mistral Nemotron: 0.6)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["mistralai/mistral-nemotron"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 4096, "description": "Maximum number of tokens to generate (default for Mistral Nemotron: 4096)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["mistralai/mistral-nemotron"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 0.5, "description": "Controls randomness in the output (default for Sarvam M: 0.5)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["sarvamai/sarvam-m"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for Sarvam M: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["sarvamai/sarvam-m"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 1, "description": "Controls randomness in the output (default for Nemotron 3 Nano 30B A3B: 1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["nvidia/nemotron-3-nano-30b-a3b"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for Nemotron 3 Nano 30B A3B: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["nvidia/nemotron-3-nano-30b-a3b"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 1, "description": "Controls randomness in the output (default for Step 3.5 Flash: 1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["stepfun-ai/step-3.5-flash"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for Step 3.5 Flash: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["stepfun-ai/step-3.5-flash"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 0.6, "description": "Controls randomness in the output (default for Qwen3.5 122B A10B: 0.6)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["qwen/qwen3.5-122b-a10b"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for Qwen3.5 122B A10B: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["qwen/qwen3.5-122b-a10b"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 1, "description": "Controls randomness in the output (default for Nemotron 3 Super 120B A12B: 1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["nvidia/nemotron-3-super-120b-a12b"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for Nemotron 3 Super 120B A12B: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["nvidia/nemotron-3-super-120b-a12b"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 0.1, "description": "Controls randomness in the output (default for Mistral Small 4 119B 2603: 0.1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["mistralai/mistral-small-4-119b-2603"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for Mistral Small 4 119B 2603: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["mistralai/mistral-small-4-119b-2603"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 1, "description": "Controls randomness in the output (default for Gemma 4 31B IT: 1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["google/gemma-4-31b-it"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for Gemma 4 31B IT: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["google/gemma-4-31b-it"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 1, "description": "Controls randomness in the output (default for MiniMax M2.7: 1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["minimaxai/minimax-m2.7"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 8192, "description": "Maximum number of tokens to generate (default for MiniMax M2.7: 8192)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["minimaxai/minimax-m2.7"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 1, "description": "Controls randomness in the output (default for GLM 5.1: 1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["z-ai/glm-5.1"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for GLM 5.1: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["z-ai/glm-5.1"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 1, "description": "Controls randomness in the output (default for DeepSeek V4 Pro: 1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["deepseek-ai/deepseek-v4-pro"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for DeepSeek V4 Pro: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["deepseek-ai/deepseek-v4-pro"] } } },
+    { "displayName": "Temperature", "name": "temperature", "type": "number", "default": 1, "description": "Controls randomness in the output (default for DeepSeek V4 Flash: 1)", "typeOptions": { "minValue": 0, "maxValue": 2, "step": 0.1 }, "displayOptions": { "show": { "model": ["deepseek-ai/deepseek-v4-flash"] } } },
+    { "displayName": "Max Tokens", "name": "maxTokens", "type": "number", "default": 16384, "description": "Maximum number of tokens to generate (default for DeepSeek V4 Flash: 16384)", "typeOptions": { "minValue": 1, "maxValue": 16384 }, "displayOptions": { "show": { "model": ["deepseek-ai/deepseek-v4-flash"] } } }
+  ]
+}

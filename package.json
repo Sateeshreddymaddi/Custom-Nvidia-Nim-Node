@@ -1,0 +1,57 @@
+{
+  "name": "@sateeshreddy/n8n-nodes-nvidia-nim",
+  "version": "2.0.0",
+  "description": "n8n community node for NVIDIA NIM",
+  "main": "dist/nodes/NvidiaNim/NvidiaNim.node.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc -w",
+    "lint": "eslint .",
+    "lintfix": "eslint . --fix",
+    "format": "prettier --write **/*.ts",
+    "prepublishOnly": "npm run build && npm run lint"
+  },
+  "keywords": [
+    "n8n",
+    "n8n-community-node",
+    "nvidia",
+    "nim"
+  ],
+  "author": "Sateeshreddy",
+  "email": "sateeshreddymaddi@gmail.com",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "n8n-workflow": "*",
+    "@langchain/core": "*",
+    "@langchain/openai": "*"
+  },
+  "overrides": {
+    "form-data": "^4.0.1"
+  },
+  "devDependencies": {
+    "n8n-workflow": "^2.16.0",
+    "@langchain/core": "^1.1.46",
+    "@langchain/openai": "^1.4.5",
+    "@types/node": "^16.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.0",
+    "gulp": "^5.0.1",
+    "prettier": "^2.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^6.0.3"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/NvidiaNim/NvidiaNim.node.js",
+      "dist/nodes/NvidiaNim/NvidiaNimEmbeddings.node.js"
+    ],
+    "credentials": [
+      "dist/credentials/NvidiaNimApi.credentials.js"
+    ]
+  }
+}
